@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alucas- <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 13:36:31 by alucas-           #+#    #+#             */
-/*   Updated: 2017/11/06 13:36:57 by alucas-          ###   ########.fr       */
+/*   Created: 2017/11/06 13:50:32 by alucas-           #+#    #+#             */
+/*   Updated: 2017/11/06 13:50:38 by alucas-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_is_negative(int n)
+int		main(int ac, char *av[])
 {
-	ft_putchar(n >= 0 ? 'P' : 'N');
+	int i;
+
+	i = 0;
+	if (ac > 1)
+		while (++i < ac)
+		{
+			while (*av[i])
+				ft_putchar(*av[i]++);
+			ft_putchar('\n');
+		}
+	return (0);
 }

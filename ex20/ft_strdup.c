@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alucas- <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 13:36:31 by alucas-           #+#    #+#             */
-/*   Updated: 2017/11/06 13:36:57 by alucas-          ###   ########.fr       */
+/*   Created: 2017/11/06 13:50:32 by alucas-           #+#    #+#             */
+/*   Updated: 2017/11/06 13:50:38 by alucas-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdlib.h>
 
-void	ft_is_negative(int n)
+char	*ft_strdup(char *src)
 {
-	ft_putchar(n >= 0 ? 'P' : 'N');
+	char	*dup;
+	char	*sptr;
+	char	*dptr;
+
+	sptr = src;
+	while (*sptr++)
+		;
+	dup = malloc(sptr - src + 1);
+	if (!dup)
+		return (NULL);
+	dptr = dup;
+	while ((*dptr++ = *src++) != '\0')
+		;
+	return (dup);
 }
